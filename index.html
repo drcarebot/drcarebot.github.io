@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>Dr.Carebot</title>
+        <link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/moon.css">
+		<link rel="stylesheet" href="css/layout.css">
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+		<script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <h2>中国慢病管理的现状</h2>
+
+						<div style="display:flex; flex-direction:row; justify-content:center; align-items:center">
+							<div class="ct-chart ct-perfect-fourth" style="width: 200px; height:200px"></div>
+							<div style='font-size:.8em; margin-left: 5%'>
+								<p>2014年全国卫生总支出共<span class="highlight">35万亿</span></p>
+								<p>其中的<span class="highlight">70%</span>用于慢病治疗</p>
+							</div>
+						</div>
+						<div style="margin-top: 1em; display:flex; flex-direction:row; justify-content:center; align-items:center">
+							<div style='font-size:.8em; margin-right: 5%'>
+								<P>全国<span class="highlight">3亿</span>慢病患者</P>
+								<p>平均每人每年使用<span class="highlight">1小时</span>的医疗服务</p>
+								<p>其中<span class="highlight">50%</span>是消耗在重复性的询问中</p>
+							</div>
+							<img style="background-color:cadetblue; width: 250px;" src="./images/carton1.png"/>
+
+						</div>
+
+				</section>
+
+                <section>
+					<h2>我们希望通过AI机器人来降低医疗成本，提升慢病患者的生活质量</h2>
+					<img style="border:none; background:none" src="./images/baymax_heart.png"/>
+				</section>
+
+                <section>
+                    <h2>Dr.Carebot</h2>
+                    <p class="fragment fade-up">基于循证医学研究的智能应答服务</p>
+					<p class="fragment fade-up">基于慢病管理标准的主动关爱服务</p>
+					<div class="fragment box-container">
+					<div>
+                    	<p>随时响应患者问询, 答疑解惑, 解读个人健康数据, 定制行动清单, 提供自我管理的追踪和提示</p>
+					</div>
+				</div>
+                </section>
+                <section>
+                    <h2>为什么我们在行？</h2>
+                    <div class="box-container">
+                        <div>
+                            <h3>跨界</h3>
+                            <p>对慢病管理和健康数据有深度理解的计算机专家</p>
+                        </div>
+                        <div>
+                            <h3>协作</h3>
+                            <p>对接世界级医疗资源，应用开发团队，市场服务公司</p>
+                        </div>
+                    </div>
+				</section>
+
+				<section>
+					<img style="width: 45%" src="./images/baymax_ruyi.jpg"/>
+				</section>
+            </div>
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+            // More info about config & dependencies:
+            // - https://github.com/hakimel/reveal.js#configuration
+            // - https://github.com/hakimel/reveal.js#dependencies
+            Reveal.initialize({
+                dependencies: [
+                    { src: 'plugin/markdown/marked.js' },
+                    { src: 'plugin/markdown/markdown.js' },
+                    { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+                ]
+            });
+		</script>
+
+		<script>
+			(function(){
+				var data = {
+  					labels: ['慢病支出','其他'],
+  					series: [70, 30]
+				};
+				new Chartist.Pie('.ct-chart', data, {
+					width: 200,
+					height: 200
+				});
+			})();
+		</script>
+    </body>
+</html>
